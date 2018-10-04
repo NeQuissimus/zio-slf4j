@@ -18,14 +18,16 @@ parallelExecution in Test := false
 fork in Test := true
 
 libraryDependencies ++= Seq(
-  "org.slf4j"  % "slf4j-api"   % "1.7.25",
-  "org.scalaz" %% "scalaz-zio" % "0.2.9",
-  "com.lihaoyi" %% "utest" % "0.6.4" % Test
+  "com.lihaoyi" %% "sourcecode"  % "0.1.4",
+  "com.lihaoyi" %% "utest"       % "0.6.4" % Test,
+  "org.scalaz"  %% "scalaz-core" % "7.2.26",
+  "org.scalaz"  %% "scalaz-zio"  % "0.2.9",
+  "org.slf4j"   % "slf4j-api"    % "1.7.25"
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
 
-scalacOptions in Test ++= Seq(
+scalacOptions ++= Seq(
   "-deprecation",
   "-encoding",
   "UTF-8",

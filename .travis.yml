@@ -5,20 +5,20 @@ scala: 2.12.7
 jdk: openjdk8
 
 before_install:
-#- "[ -z \"${encrypted_ea952d6556a2_iv}\" ] || openssl aes-256-cbc -K $encrypted_ea952d6556a2_key -iv $encrypted_ea952d6556a2_iv -in ./project/zecret -out ./project/secret -d"
+- "[ -z \"${encrypted_44858260af60_iv}\" ] || openssl aes-256-cbc -K $encrypted_44858260af60_key -iv $encrypted_44858260af60_iv -in ./project/zecret -out ./project/secret -d"
 - git fetch --tags
 
-#env:
-#  global:
-#  - secure: H4UFodiAIzCT3FUAMxXgVwMM51mZVPKn6R0YzMsEQsSGRoEuwUlS3vnAX9b1MdiwHz4Y/THieOIEQ0UOegIE8qFU2Jb2Qy1rGvDE3fbcE1CwtR8XET1V9TjdqeaFRaD9oaeV21ur+842Mnz1GDkbAPe2Ah2gMWs1o5Jh0rv1Ip/IcIPV9I5S4m9oF1+xsKellKYFLjnym++nC8jOImWEIEtu+fwUuL9pScPlUaOPCMqja9oGG5fV4faLbXPhC6aJ75Kc8LbpruNyAbfW4WXreL1yTPK3pw+jl5nW3EmitvwQcCSPpgt8kiVHe+4pgyukbOIBi4+3YuPmYHB8vhQnaiiH227kVDBO3EY8Jh+ChhJSXHYR5rfxYWYFAG4n1ueyeLbs6JIbN55n/iabPXQhC8c38qqBBdlx02vdl13TDEANcgVSZ002sPJoOXUHcNPiPvdK69cmfUXa2km2O05nTvgtsN9kobGLud5BiTrz2iWF9XEoViMkDxrtBkhbio+IpBvcShE921HFtV0TvGRMFfrvgrkU/kCmfsfRk69Ba/xa3rrDy8g1v/NJmPpwZsUdrhD9GdY2cRUiDk16brcEdnwOng3HhM0ckiBg7IRhM+CKyTgKNtv2+RE8o0i0oKBnw/dT6hPk4YGSfGwFYGoocPuXD0UF42k7TbLSwudsCkI=
-#  - secure: ocjY7ezII9e4CVRSu7O1Y1QVijxHwefz57CwDIR9cvLWK+W1C92+erkzrAxfx6838cw4O6CVECnLfL4T03g/yFbGIpwykzRSHp/AhrguWCFUByl58wuiJdVY+uinHRfrADsYDhJVe2hcok3nB4UxQXhWGGoM0HhCXKOxys3cEzJH4uziudky89k9LIxIKfUWvPQxzagoNHmOfHiWoRF6pvIZva1FF5+LMq+pNme86PxlnA7wU0Qo5VjNCAqD6z04Hc9VdQWiOYplvvwutZDNfqi7VEXMTjcPgtJS3/nr4iwODr41aX7DdKDHUBxejouVxK2W1HITFI4ynQ79mstRhtEoPl4Zqsxj4Yr2+9ujDJhNkHhnapi8jaYW0gzDbHQtEkeZtDXkNvbQUgbOLwGId3TRNxzLwkBdZbuiXr84U/4MxuGRppNxGMDwacVRvHm8p7ZpxjVX8UV2mHsKI24lakPyQ1gRkOk+Vg7Av61uSDFYfG7Fd8hfiU1zdoYZS36MlfHzoGM6G0bXL6tXkN4yxgGOE1iMH0RVo69GxECpy0rndrFPJizzO071e0Vw2IHhiBNLb2tCH+jmIs+lmAqSgumIi+K2ZdwiVZGh1LkEV0qCIuDWLlj/98loj1vMu0+xea5VjGFGD3K/Q33AlUnpI6Kt2CmeZhGATqt/bdFz1LE=
-#  - secure: NqQdnBLufdQNRKI4fc+p426ZXZw3AljFBikYsqgWC+h5Vf/EAJhotr+yHCYDpqqzXBdNH/aXmXiSdXq4Ao13q9kKS4tJI8UlLuJVPKB466/+pSqHf15DWyn2RVafuq71heX4dlqiNalNjgAmVYRryBZI43PrBCesBjO4jgVI6DrzK6HZoxWcn1y+zKqOlAtCP7YKAYWcAgVdpS3Djyt0lyz9Olduug+CQmtQlTUh81dsLvzi/5Pr8YviJq5k91smR8pi/yvOPx+wwhXQwDhcHBI3BtOuXUYimEiPCWAXimslITCgU9PU6Tdu/L+fObismJjRBqjJgrmwmzo0w9Hm+WqLfzK5VAYWRfe8py8KTzRyj5l5+Ot/0tmLhZHiEfa2VgDGneZEdBJtglqvbCkblYej4YTdYVaCJLSeTCpW5QxQRJ8NPVJ8fi98E9nrHg5D5ZuCDc/KJaaHwqLXOqr2bH+scVnGBUtszGEBf+5uURrRUH5TIL4V9mzdutk4kSR3tTKG9/Z1l1eH4RFdeJEyX747wFmypvZJRj235zRKhkVKemaa2jas7MU8KX2kXTHbq1F/MGzB3A8S5qJ2uIM9GQz0Vkl+XshEaAiUw22JvAMdNYjJAS9ET4kgWfBLPKxGwuRh/ERXySNQjSl4AlVo3Bsz1mD6EwDs5meNBnpMrq4=
+env:
+  global:
+    secure: "bmkXi1oBjcu6hvewAQuxVAyqYVp/S1JpKAWmvyUVq4Ufu24DGlZXkKpxHdEVasM4j9ztANd7o/0wlO0WLKgRQMrEfc+Zv7mVs24LCDFCINhGjNKjFNir+NmwnBboCbw8Lo5vkd22Jp9LNLykCM83ytCz68EHvBEuTIGrk+v9aSO4ff2sJ4ZYpzcPN2xptXz0hVGFPPvE+5yIogRtMgDVi7Vs8iHmaOP1+MP4IVH5Tsm+nUB9q48ZFBYj80dmecPBIFlIiNXRbWwUYIypqJP9Q6NJ4Dgshm1qCDJvJOtCiah84NIYKs7XZJmI6ufztXOivXJcKBPGs+gAiQ3q6fNcfPjS8V1yizx147UlqeyCBdXWLbZLuCTMwhBe03Ad1VzKdS6CY1ysWe6C5ZYJpPCw9Jhw9MO1huQWQRfiig7A8ZR4WEZ5xjRYgwjyJ13UPe+jI7AzA40H50wFh+EFdX62Et7sLoVu/+pf4vCfo1SGo/VdmZWTev0CcfUZH7w0WAvxBn/9iI3EkYcPdjQMurY2dXWdyfCMyCdodDEMrpzLkalFwU1lCyv2FG8IjVC+cYtD7MAhz3QTJUsEwtA6DUYxkTz3n9gontr8aXwGayOHnhq7Nywg06eCuAKEfSeAthpfjpv32YChZ1zkbkRAOt4GewkSd4WDPHOrYsDMfDpkHZI="
+    secure: "mN1NrKrfhMoXLM0mEGUiTrZD/UVZ9YDgsuzb8Un58qeYIA5jvSYtiuy7YtmAtMX1OCyLgm7bMh4h+JBSZf4K3YjgDqynSSCAHciL04W6gBCrtdVWRxEMCcv639+yRJx6As/1y8RPZfwLyJunaa5Xj0abOUj/xNN7MDxzLroCIDM/ILAqpyVdGkqMNKOo/WMZJINxulssHNFr8icOL4+JeYTrW6cVtp0Wn8HIm5GOchY08T4SKVRVyAyCs+7QH0Syqy0C0dgYDB2eUjYQoF1krtAGeQqJ+zOrW5fBUkCljtwOTKEu1wJcy5uaIgS3AycJEgFOOPIbdN7M6KzOuA5iREMzSV5D7QzJ8LGbH4H3Vr7ZpK1Fm0kbqOb/AEAFfsAaZHnyroAJpIh8tUOBs7J3lFzrwLk1ZH+BpLu3AJ0zootkT+RTRc62Ylpil4btMSSItjZYVt5DWryHBm21XFy3cba32ZY4Bb3rBr+2qf4rIKPOueAxqWwPo+WmCZ84BjDnP+JyAGa1yZnqK/lUyu29XmTCd31l/xDyC9sPQQgvXtfHe+lxvne2dSfmhs6vaNKD+iyJcnF58je2Ilaer5Em3lZ4Z272R7sr11jcgxwhfjivDji3rGCcySfClA0btgpuLXWKJPGfrwcNAZy4YkfaRvQuF/KLETdGir0cszlgjAw="
+    secure: "rpX9L6CKekBhmLWcq1ixRKvKkig92C3FDPtThYoM5kp5UqeTp0fNt3danLVODA8ABzbg7CEODgxymUOtcuDafWdOiV3wfSt1EBkA2i0CUzB/CBBpbFewQlTHnuB5+UrIUOKZ/4QyKuMiZeiaFfvA64Oqyxb3qN5QbJDpSYA5R5Zu7v8r+plVr4vXASdjqgkkYo3igkQWCMOJh11V3tTaDbtO2RHLsOWtUeqJh0s4W6HpGVCbqBYL10Ik4By/s7CPKT+mujdxs2UH09FoBo8/y4O+sgfitTGj4BYxzrhiWEKMc1b1fe1QXjx7pwMR4gsgYWuP/4t7PF+A/Dx93yranzdH5m96iX3DoYvKhMFkBJ1Ciu+E/n32wM/DMoD8pzcg+5PhjfNGxFBOc2x723JsRcU9NsyEbrWg2nUTyd6n4puuUuJvM9NVPO5xuSdR8dwO29NhIaXJPBazcZOXcSmhAO/7nKuDT5lw7UrlZ9hHGI2HddOQLrCnGVZP8Ywt3Xocj77Y1238e6EK8qCPxmdoYmvX5hx3/8v8LwSK8VL9bHH987llgoDIDgZtng/YbgupHAetfnv5Eq30Whk5gLJxElA2HMyc07K4YYD/RuX228HgicVL7PS5P4eQoUKChfNUuPT5jzONdrlTrqu+EELGaxhnPYBF9Qz/xw4azOfnKQ0="
 
 stages:
 - name: lint
 - name: build
-#- name: release
-#  if: (branch = master AND type = push) OR (tag IS present)
+- name: release
+  if: (branch = master AND type = push) OR (tag IS present)
 
 jobs:
   include:
@@ -31,11 +31,11 @@ jobs:
       name: "Build (JDK8, 2.12)"
       script: sbt ++$TRAVIS_SCALA_VERSION! coverage test coverageReport
       after_success: bash <(curl -s https://codecov.io/bash)
-#    - &release
-#      stage: release
-#      name: "Release artifacts"
-#      before_script: export PGP_SECRET="$(<./project/secret)"
-#      script: sbt ci-release || sbt sonatypeReleaseAll
+    - &release
+      stage: release
+      name: "Release artifacts"
+      before_script: export PGP_SECRET="$(<./project/secret)"
+      script: sbt ci-release || sbt sonatypeReleaseAll
 
     - <<: *build
       jdk: openjdk11
