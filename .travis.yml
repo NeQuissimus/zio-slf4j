@@ -1,0 +1,49 @@
+language: scala
+
+scala: 2.12.7
+
+jdk: openjdk8
+
+before_install:
+#- "[ -z \"${encrypted_ea952d6556a2_iv}\" ] || openssl aes-256-cbc -K $encrypted_ea952d6556a2_key -iv $encrypted_ea952d6556a2_iv -in ./project/zecret -out ./project/secret -d"
+- git fetch --tags
+
+#env:
+#  global:
+#  - secure: H4UFodiAIzCT3FUAMxXgVwMM51mZVPKn6R0YzMsEQsSGRoEuwUlS3vnAX9b1MdiwHz4Y/THieOIEQ0UOegIE8qFU2Jb2Qy1rGvDE3fbcE1CwtR8XET1V9TjdqeaFRaD9oaeV21ur+842Mnz1GDkbAPe2Ah2gMWs1o5Jh0rv1Ip/IcIPV9I5S4m9oF1+xsKellKYFLjnym++nC8jOImWEIEtu+fwUuL9pScPlUaOPCMqja9oGG5fV4faLbXPhC6aJ75Kc8LbpruNyAbfW4WXreL1yTPK3pw+jl5nW3EmitvwQcCSPpgt8kiVHe+4pgyukbOIBi4+3YuPmYHB8vhQnaiiH227kVDBO3EY8Jh+ChhJSXHYR5rfxYWYFAG4n1ueyeLbs6JIbN55n/iabPXQhC8c38qqBBdlx02vdl13TDEANcgVSZ002sPJoOXUHcNPiPvdK69cmfUXa2km2O05nTvgtsN9kobGLud5BiTrz2iWF9XEoViMkDxrtBkhbio+IpBvcShE921HFtV0TvGRMFfrvgrkU/kCmfsfRk69Ba/xa3rrDy8g1v/NJmPpwZsUdrhD9GdY2cRUiDk16brcEdnwOng3HhM0ckiBg7IRhM+CKyTgKNtv2+RE8o0i0oKBnw/dT6hPk4YGSfGwFYGoocPuXD0UF42k7TbLSwudsCkI=
+#  - secure: ocjY7ezII9e4CVRSu7O1Y1QVijxHwefz57CwDIR9cvLWK+W1C92+erkzrAxfx6838cw4O6CVECnLfL4T03g/yFbGIpwykzRSHp/AhrguWCFUByl58wuiJdVY+uinHRfrADsYDhJVe2hcok3nB4UxQXhWGGoM0HhCXKOxys3cEzJH4uziudky89k9LIxIKfUWvPQxzagoNHmOfHiWoRF6pvIZva1FF5+LMq+pNme86PxlnA7wU0Qo5VjNCAqD6z04Hc9VdQWiOYplvvwutZDNfqi7VEXMTjcPgtJS3/nr4iwODr41aX7DdKDHUBxejouVxK2W1HITFI4ynQ79mstRhtEoPl4Zqsxj4Yr2+9ujDJhNkHhnapi8jaYW0gzDbHQtEkeZtDXkNvbQUgbOLwGId3TRNxzLwkBdZbuiXr84U/4MxuGRppNxGMDwacVRvHm8p7ZpxjVX8UV2mHsKI24lakPyQ1gRkOk+Vg7Av61uSDFYfG7Fd8hfiU1zdoYZS36MlfHzoGM6G0bXL6tXkN4yxgGOE1iMH0RVo69GxECpy0rndrFPJizzO071e0Vw2IHhiBNLb2tCH+jmIs+lmAqSgumIi+K2ZdwiVZGh1LkEV0qCIuDWLlj/98loj1vMu0+xea5VjGFGD3K/Q33AlUnpI6Kt2CmeZhGATqt/bdFz1LE=
+#  - secure: NqQdnBLufdQNRKI4fc+p426ZXZw3AljFBikYsqgWC+h5Vf/EAJhotr+yHCYDpqqzXBdNH/aXmXiSdXq4Ao13q9kKS4tJI8UlLuJVPKB466/+pSqHf15DWyn2RVafuq71heX4dlqiNalNjgAmVYRryBZI43PrBCesBjO4jgVI6DrzK6HZoxWcn1y+zKqOlAtCP7YKAYWcAgVdpS3Djyt0lyz9Olduug+CQmtQlTUh81dsLvzi/5Pr8YviJq5k91smR8pi/yvOPx+wwhXQwDhcHBI3BtOuXUYimEiPCWAXimslITCgU9PU6Tdu/L+fObismJjRBqjJgrmwmzo0w9Hm+WqLfzK5VAYWRfe8py8KTzRyj5l5+Ot/0tmLhZHiEfa2VgDGneZEdBJtglqvbCkblYej4YTdYVaCJLSeTCpW5QxQRJ8NPVJ8fi98E9nrHg5D5ZuCDc/KJaaHwqLXOqr2bH+scVnGBUtszGEBf+5uURrRUH5TIL4V9mzdutk4kSR3tTKG9/Z1l1eH4RFdeJEyX747wFmypvZJRj235zRKhkVKemaa2jas7MU8KX2kXTHbq1F/MGzB3A8S5qJ2uIM9GQz0Vkl+XshEaAiUw22JvAMdNYjJAS9ET4kgWfBLPKxGwuRh/ERXySNQjSl4AlVo3Bsz1mD6EwDs5meNBnpMrq4=
+
+stages:
+- name: lint
+- name: build
+#- name: release
+#  if: (branch = master AND type = push) OR (tag IS present)
+
+jobs:
+  include:
+    - &lint
+      stage: lint
+      name: "Lint"
+      script: sbt scalafmtCheck test:scalafmtCheck scalafmtSbtCheck
+    - &build
+      stage: build
+      name: "Build (JDK8, 2.12)"
+      script: sbt ++$TRAVIS_SCALA_VERSION! coverage test coverageReport
+      after_success: bash <(curl -s https://codecov.io/bash)
+#    - &release
+#      stage: release
+#      name: "Release artifacts"
+#      before_script: export PGP_SECRET="$(<./project/secret)"
+#      script: sbt ci-release || sbt sonatypeReleaseAll
+
+    - <<: *build
+      jdk: openjdk11
+      name: "Build (JDK11, 2.12)"
+    - <<: *build
+      scala: 2.11.12
+      name: "Build (JDK8, 2.11)"
+    - <<: *build
+      jdk: openjdk11
+      scala: 2.11.12
+      name: "Build (JDK11, 2.11)"
