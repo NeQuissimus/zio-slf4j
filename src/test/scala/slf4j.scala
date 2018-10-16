@@ -11,7 +11,7 @@ object Slf4j extends TestSuite {
 
   def innerLogger(): Unit = {
     @silent object MustCompile extends Slf4jLogger {
-      val clazz               = implicitly
+      val clazz               = implicitly[sourcecode.FullName]
       val a: org.slf4j.Logger = logger.inner
     }
   }
