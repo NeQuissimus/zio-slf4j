@@ -22,7 +22,9 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest"       % "0.6.4" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.2.26",
   "org.scalaz"  %% "scalaz-zio"  % "0.2.11",
-  "org.slf4j"   % "slf4j-api"    % "1.7.25"
+  "org.slf4j"   % "slf4j-api"    % "1.7.25",
+  compilerPlugin("com.github.ghik" %% "silencer-plugin" % "1.2.1"),
+  "com.github.ghik" %% "silencer-lib" % "1.2.1" % Provided
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
