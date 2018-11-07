@@ -19,7 +19,7 @@ fork in Test := true
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "sourcecode"  % "0.1.5",
-  "com.lihaoyi" %% "utest"       % "0.6.4" % Test,
+  "com.lihaoyi" %% "utest"       % "0.6.6" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.2.26",
   "org.scalaz"  %% "scalaz-zio"  % "0.2.11",
   "org.slf4j"   % "slf4j-api"    % "1.7.25",
