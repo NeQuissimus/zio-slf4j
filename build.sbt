@@ -20,7 +20,7 @@ fork in Test := true
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "sourcecode"  % "0.1.5",
   "com.lihaoyi" %% "utest"       % "0.6.6" % Test,
-  "org.scalaz"  %% "scalaz-core" % "7.2.26",
+  "org.scalaz"  %% "scalaz-core" % "7.2.27",
   "org.scalaz"  %% "scalaz-zio"  % "0.3.2",
   "org.slf4j"   % "slf4j-api"    % "1.7.25",
   compilerPlugin("com.github.ghik" %% "silencer-plugin" % "1.2.1"),
