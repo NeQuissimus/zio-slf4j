@@ -1,4 +1,4 @@
-val mainScala = "2.12.7"
+val mainScala = "2.12.8"
 val allScala  = Seq("2.11.12", mainScala)
 
 organization := "com.nequissimus"
@@ -21,7 +21,7 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "sourcecode"  % "0.1.5",
   "com.lihaoyi" %% "utest"       % "0.6.6" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.2.27",
-  "org.scalaz"  %% "scalaz-zio"  % "0.5.0",
+  "org.scalaz"  %% "scalaz-zio"  % "0.5.1",
   "org.slf4j"   % "slf4j-api"    % "1.7.25",
   compilerPlugin("com.github.ghik" %% "silencer-plugin" % "1.3.0"),
   "com.github.ghik" %% "silencer-lib" % "1.3.0" % Provided
