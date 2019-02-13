@@ -1,5 +1,5 @@
 val mainScala = "2.12.8"
-val allScala  = Seq("2.11.12", mainScala)
+val allScala  = Seq("2.11.12", mainScala, "2.13.0-M5")
 
 organization := "com.nequissimus"
 name := "zio-slf4j"
@@ -37,29 +37,38 @@ scalacOptions ++= Seq(
   "-Yrangepos",
   "-feature",
   "-Xfuture",
-  "-Ypartial-unification",
   "-language:higherKinds",
   "-language:existentials",
   "-unchecked",
-  "-Yno-adapted-args",
   "-Xlint:_,-type-parameter-shadow",
-  "-Ywarn-inaccessible",
-  "-Ywarn-infer-any",
-  "-Ywarn-nullary-override",
-  "-Ywarn-nullary-unit",
   "-Ywarn-numeric-widen",
   "-Ywarn-unused",
   "-Ywarn-value-discard"
 ) ++ (CrossVersion.partialVersion(scalaVersion.value) match {
-  case Some((2, scalaMajor)) if scalaMajor <= 11 => Nil
-  case _ =>
+  case Some((2, 11)) =>
     Seq(
-      "-opt-warnings",
-      "-Ywarn-extra-implicit",
-      "-opt:l:inline",
-      "-opt-inline-from:<source>",
-      "-Xsource:2.13"
+      "-Yno-adapted-args",
+      "-Ypartial-unification",
+      "-Ywarn-inaccessible",
+      "-Ywarn-infer-any",
+      "-Ywarn-nullary-override",
+      "-Ywarn-nullary-unit"
     )
+  case Some((2, 12)) =>
+    Seq(
+      "-Xsource:2.13",
+      "-Yno-adapted-args",
+      "-Ypartial-unification",
+      "-Ywarn-extra-implicit",
+      "-Ywarn-inaccessible",
+      "-Ywarn-infer-any",
+      "-Ywarn-nullary-override",
+      "-Ywarn-nullary-unit",
+      "-opt-inline-from:<source>",
+      "-opt-warnings",
+      "-opt:l:inline"
+    )
+  case _ => Nil
 })
 
 crossScalaVersions := allScala

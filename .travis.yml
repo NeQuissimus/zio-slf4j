@@ -50,3 +50,10 @@ jobs:
       jdk: openjdk11
       scala: 2.11.12
       name: "Build (JDK11, 2.11)"
+    - <<: *build
+      scala: 2.13.0-M5
+      name: "Build (JDK8, 2.13)"
+    - <<: *build
+      jdk: openjdk11
+      scala: 2.13.0-M5
+      name: "Build (JDK11, 2.13)"
