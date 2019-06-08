@@ -3,7 +3,7 @@ package nequi.zio.logger
 import org.slf4j
 
 import scalaz.Show
-import scalaz.zio.{ Queue, UIO, ZIO }
+import scalaz.zio.ZIO
 
 import sourcecode.FullName
 
