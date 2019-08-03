@@ -2,14 +2,13 @@ package sample
 
 import nequi.zio.logger._
 
-import scalaz._
-import scalaz.zio._
+import scalaz.Scalaz._
 
-import Scalaz._
+import zio._
 
 object SampleApp extends App {
   def run(args: List[String]): ZIO[Environment, Nothing, Int] = {
-    val logged: ZIO[Logger, Nothing, Unit] = info("Hello World")
+    val logged: ZIO[Logger, Nothing, Unit] = info(42)
 
     val provided: ZIO[Any, Nothing, Unit] = logged.provideSome(_ => Slf4jLogger.create)
 

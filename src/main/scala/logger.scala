@@ -2,8 +2,7 @@ package nequi.zio.logger
 
 import org.slf4j
 
-import scalaz.Show
-import scalaz.zio.ZIO
+import zio.ZIO
 
 import sourcecode.FullName
 
@@ -13,11 +12,11 @@ trait Logger {
 
 object Logger {
   trait Service[R] {
-    def trace[A: Show](a: A): ZIO[R, Nothing, Unit]
-    def debug[A: Show](a: A): ZIO[R, Nothing, Unit]
-    def info[A: Show](a: A): ZIO[R, Nothing, Unit]
-    def warn[A: Show](a: A): ZIO[R, Nothing, Unit]
-    def error[A: Show](a: A): ZIO[R, Nothing, Unit]
+    def trace(a: String): ZIO[R, Nothing, Unit]
+    def debug(a: String): ZIO[R, Nothing, Unit]
+    def info(a: String): ZIO[R, Nothing, Unit]
+    def warn(a: String): ZIO[R, Nothing, Unit]
+    def error(a: String): ZIO[R, Nothing, Unit]
   }
 }
 
@@ -25,11 +24,11 @@ trait Slf4jLogger extends Logger {
   val inner: slf4j.Logger
 
   val logger = new Logger.Service[Any] {
-    def trace[A](a: A)(implicit S: Show[A]): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.trace(S.shows(a)))
-    def debug[A](a: A)(implicit S: Show[A]): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.debug(S.shows(a)))
-    def info[A](a: A)(implicit S: Show[A]): ZIO[Any, Nothing, Unit]  = ZIO.effectTotal(inner.info(S.shows(a)))
-    def warn[A](a: A)(implicit S: Show[A]): ZIO[Any, Nothing, Unit]  = ZIO.effectTotal(inner.warn(S.shows(a)))
-    def error[A](a: A)(implicit S: Show[A]): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.error(S.shows(a)))
+    def trace(a: String): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.trace(a))
+    def debug(a: String): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.debug(a))
+    def info(a: String): ZIO[Any, Nothing, Unit]  = ZIO.effectTotal(inner.info(a))
+    def warn(a: String): ZIO[Any, Nothing, Unit]  = ZIO.effectTotal(inner.warn(a))
+    def error(a: String): ZIO[Any, Nothing, Unit] = ZIO.effectTotal(inner.error(a))
   }
 }
 
