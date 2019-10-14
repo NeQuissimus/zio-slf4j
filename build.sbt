@@ -26,7 +26,7 @@ scmInfo := Some(
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "sourcecode"  % "0.1.7",
   "com.lihaoyi" %% "utest"       % "0.6.7" % Test,
-  "org.scalaz"  %% "scalaz-core" % "7.2.28" % Optional,
+  "org.scalaz"  %% "scalaz-core" % "7.2.29" % Optional,
   "dev.zio"     %% "zio"         % "1.0.0-RC10-1",
   "org.slf4j"   % "slf4j-api"    % "1.7.28",
   compilerPlugin("com.github.ghik" %% "silencer-plugin" % "1.4.2"),
