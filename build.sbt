@@ -1,5 +1,5 @@
-val mainScala = "2.12.8"
-val allScala  = Seq("2.11.12", mainScala)
+val mainScala = "2.12.10"
+val allScala  = Seq("2.11.12", mainScala, "2.13.1")
 
 organization := "com.nequissimus"
 name := "zio-slf4j"
@@ -24,10 +24,10 @@ scmInfo := Some(
 )
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "sourcecode"  % "0.1.7",
+  "com.lihaoyi" %% "sourcecode"  % "0.1.8",
   "com.lihaoyi" %% "utest"       % "0.6.7" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.2.29" % Optional,
-  "dev.zio"     %% "zio"         % "1.0.0-RC16",
+  "dev.zio"     %% "zio"         % "1.0.0-RC17",
   "org.slf4j"   % "slf4j-api"    % "1.7.29",
   compilerPlugin("com.github.ghik" %% "silencer-plugin" % "1.4.2"),
   "com.github.ghik" %% "silencer-lib" % "1.4.2" % Provided
@@ -78,5 +78,3 @@ scalacOptions ++= Seq(
 })
 
 crossScalaVersions := allScala
-
-addCommandAlias("format", "all scalafmtSbt scalafmt test:scalafmt")
