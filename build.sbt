@@ -1,5 +1,5 @@
-val mainScala = "2.12.13"
-val allScala  = Seq(mainScala, "2.13.1")
+val mainScala = "2.12.10"
+val allScala  = Seq(mainScala, "2.13.6")
 
 organization := "com.nequissimus"
 name := "zio-slf4j"
@@ -24,8 +24,8 @@ scmInfo := Some(
 )
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "sourcecode"  % "0.2.3",
-  "com.lihaoyi" %% "utest"       % "0.7.7" % Test,
+  "com.lihaoyi" %% "sourcecode"  % "0.2.7",
+  "com.lihaoyi" %% "utest"       % "0.7.10" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.3.3" % Optional,
   "dev.zio"     %% "zio"         % "1.0.0-RC19-2",
   "org.slf4j"   % "slf4j-api"    % "1.7.30",
