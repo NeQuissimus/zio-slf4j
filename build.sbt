@@ -1,4 +1,4 @@
-val mainScala = "2.12.10"
+val mainScala = "2.12.14"
 val allScala  = Seq(mainScala, "2.13.6")
 
 organization := "com.nequissimus"
