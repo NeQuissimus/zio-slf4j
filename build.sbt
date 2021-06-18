@@ -28,9 +28,9 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest"       % "0.7.10" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.3.3" % Optional,
   "dev.zio"     %% "zio"         % "1.0.0-RC19-2",
-  "org.slf4j"   % "slf4j-api"    % "1.7.30",
-  compilerPlugin("com.github.ghik" % "silencer-plugin" % "1.7.5" cross CrossVersion.full),
-  "com.github.ghik" % "silencer-lib" % "1.7.5" % Provided cross CrossVersion.full
+  "org.slf4j"   % "slf4j-api"    % "1.7.31",
+  compilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
+  "com.github.ghik" % "silencer-lib" % "1.6.0" % Provided cross CrossVersion.full
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
