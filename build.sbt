@@ -1,5 +1,5 @@
 val mainScala = "2.12.15"
-val allScala  = Seq(mainScala, "2.13.6")
+val allScala  = Seq(mainScala, "2.13.7")
 
 organization := "com.nequissimus"
 name := "zio-slf4j"
@@ -24,13 +24,13 @@ scmInfo := Some(
 )
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "sourcecode"  % "0.2.7",
-  "com.lihaoyi" %% "utest"       % "0.7.10" % Test,
-  "org.scalaz"  %% "scalaz-core" % "7.3.5" % Optional,
-  "dev.zio"     %% "zio"         % "1.0.0-RC19-2",
-  "org.slf4j"   % "slf4j-api"    % "1.7.32",
+  "com.lihaoyi"    %% "sourcecode"   % "0.2.7",
+  "com.lihaoyi"    %% "utest"        % "0.7.10" % Test,
+  "org.scalaz"     %% "scalaz-core"  % "7.3.5"  % Optional,
+  "dev.zio"        %% "zio"          % "1.0.0-RC19-2",
+  "org.slf4j"       % "slf4j-api"    % "1.7.32",
   compilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
-  "com.github.ghik" % "silencer-lib" % "1.6.0" % Provided cross CrossVersion.full
+  "com.github.ghik" % "silencer-lib" % "1.6.0"  % Provided cross CrossVersion.full
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
@@ -74,7 +74,7 @@ scalacOptions ++= Seq(
       "-opt-warnings",
       "-opt:l:inline"
     )
-  case _ => Nil
+  case _             => Nil
 })
 
 crossScalaVersions := allScala
