@@ -14,8 +14,8 @@ developers := List(
     url("http://nequissimus.com/")
   )
 )
-parallelExecution in Test := false
-fork in Test := true
+Test / parallelExecution := false
+Test / fork := true
 pgpPublicRing := file("/tmp/public.asc")
 pgpSecretRing := file("/tmp/secret.asc")
 releaseEarlyWith := SonatypePublisher
