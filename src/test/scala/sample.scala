@@ -6,7 +6,7 @@ import zio._
 
 // Very simple ZIO app
 object SampleApp extends App {
-  def run(args: List[String]): ZIO[Any, Nothing, Int] = {
+  def run(args: List[String]): URIO[Any, ExitCode] = {
 
     // Some logic that logs
     def logged(i: Int): ZIO[Logger, Nothing, Int] = info(s"Got ${i}") *> ZIO.effectTotal(i + 2)
@@ -15,6 +15,6 @@ object SampleApp extends App {
     val provided: ZIO[Any, Nothing, Int] = logged(42).provideSome(_ => Slf4jLogger.create)
 
     // Adjust app exit code to signal success
-    provided.map(_ => 0)
+    provided.map(_ => ExitCode.success)
   }
 }
