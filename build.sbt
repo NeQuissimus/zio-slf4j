@@ -28,9 +28,7 @@ libraryDependencies ++= Seq(
   "com.lihaoyi"    %% "utest"        % "0.7.11" % Test,
   "org.scalaz"     %% "scalaz-core"  % "7.3.6"  % Optional,
   "dev.zio"        %% "zio"          % "1.0.13",
-  "org.slf4j"       % "slf4j-api"    % "1.7.35",
-  compilerPlugin("com.github.ghik" % "silencer-plugin" % "1.7.8" cross CrossVersion.full),
-  "com.github.ghik" % "silencer-lib" % "1.7.8"  % Provided cross CrossVersion.full
+  "org.slf4j"       % "slf4j-api"    % "1.7.33"
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
@@ -51,15 +49,6 @@ scalacOptions ++= Seq(
   "-Ywarn-unused",
   "-Ywarn-value-discard"
 ) ++ (CrossVersion.partialVersion(scalaVersion.value) match {
-  case Some((2, 11)) =>
-    Seq(
-      "-Yno-adapted-args",
-      "-Ypartial-unification",
-      "-Ywarn-inaccessible",
-      "-Ywarn-infer-any",
-      "-Ywarn-nullary-override",
-      "-Ywarn-nullary-unit"
-    )
   case Some((2, 12)) =>
     Seq(
       "-Xsource:2.13",
