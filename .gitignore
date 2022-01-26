@@ -1,4 +1,6 @@
 project/secret
+project/project
+project/metals.sbt
 
 # Created by https://www.gitignore.io/api/scala,java,python,sbt,emacs,linux,vim
 
