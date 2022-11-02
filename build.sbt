@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "sourcecode"  % "0.3.0",
   "com.lihaoyi" %% "utest"       % "0.8.1" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.3.6" % Optional,
-  "dev.zio"     %% "zio"         % "1.0.17",
+  "dev.zio"     %% "zio"         % "2.0.3",
   "org.slf4j"    % "slf4j-api"   % "2.0.3"
 )
 
