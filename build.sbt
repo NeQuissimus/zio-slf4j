@@ -28,7 +28,7 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest"       % "0.8.1" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.3.7" % Optional,
   "dev.zio"     %% "zio"         % "1.0.18",
-  "org.slf4j"    % "slf4j-api"   % "2.0.6"
+  "org.slf4j"    % "slf4j-api"   % "2.0.7"
 )
 
 testFrameworks += new TestFramework("utest.runner.Framework")
