@@ -24,7 +24,7 @@ scmInfo                  := Some(
 )
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "sourcecode"  % "0.3.0",
+  "com.lihaoyi" %% "sourcecode"  % "0.3.1",
   "com.lihaoyi" %% "utest"       % "0.8.1" % Test,
   "org.scalaz"  %% "scalaz-core" % "7.3.7" % Optional,
   "dev.zio"     %% "zio"         % "1.0.18",
