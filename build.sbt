@@ -1,5 +1,5 @@
 val mainScala = "2.12.20"
-val allScala  = Seq(mainScala, "2.13.14")
+val allScala  = Seq(mainScala, "2.13.15")
 
 organization             := "com.nequissimus"
 name                     := "zio-slf4j"
